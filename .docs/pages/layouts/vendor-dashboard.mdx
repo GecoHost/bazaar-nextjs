@@ -1,0 +1,31 @@
+# Admin/Vendor Dashboard Layout
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/layouts/vendor-dashboard`</Callout>
+
+<br />
+
+<img src="/vendor-dashboard.png" width="400" />
+
+## Examples
+
+```jsx {1,4} copy showLineNumbers
+import { VendorDashboardLayout } from 'components/layouts/vendor-dashboard'
+
+export default function Example({ children }) {
+  return <VendorDashboardLayout>{children}</VendorDashboardLayout>
+}
+```
+
+## Used
+
+- Inside Admin and Vendor folder all pages
+- [Dashboard](https://bazar-react.vercel.app/vendor/dashboard)
+- [Product List](https://bazar-react.vercel.app/admin/products)
+
+## Props
+
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| children | ReactNode |      Yes | -       |

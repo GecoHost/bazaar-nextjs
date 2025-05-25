@@ -1,0 +1,42 @@
+# Navbar
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/navbar`</Callout>
+
+## Examples
+
+```jsx copy showLineNumbers
+import { CategoryList } from 'components/categories'
+import { Navbar, NavigationList } from 'components/navbar'
+import LayoutModel from "models/Layout.model";
+
+export default function Example({ header }: LayoutModel) {
+  return (
+    <Navbar
+      border={1}
+      elevation={0}
+      navigation={<NavigationList navigation={header.navigation} />}
+      categories={<CategoryList categories={header.categoryMenus} />}
+    />
+  )
+}
+```
+
+## Views
+
+<br />
+<img src="/navbar/navbar-1.jpg" />
+
+## Used
+
+- [ShopLayout1](https://bazaar-doc.netlify.app/layouts/shop-layout-1)
+
+## Props
+
+| Name       |   Type    | Required | Default |
+| :--------- | :-------: | -------: | ------- |
+| navigation | ReactNode |      Yes | -       |
+| categories | ReactNode | Optional | -       |
+| border     |  number   | Optional | -       |
+| elevation  |  number   | Optional | 2       |

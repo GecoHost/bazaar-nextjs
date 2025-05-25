@@ -1,0 +1,38 @@
+# Utils Function
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/lib`</Callout>
+
+## getDateDifference
+
+```js copy showLineNumbers
+import formatDistanceStrict from 'date-fns/formatDistanceStrict'
+
+function getDateDifference(date) {
+  const distance = formatDistanceStrict(new Date(), new Date(date))
+  return distance + ' ago'
+}
+```
+
+## calculateDiscount
+
+It takes two arguments, subtracts the discount from the original price, and returns the new price.
+
+```js copy showLineNumbers
+function calculateDiscount(price, discount) {
+  const afterDiscount = Number((price - price * (discount / 100)).toFixed(2))
+  return currency(afterDiscount)
+}
+```
+
+## currency
+
+The price, which is a number, and the length of the fraction are the two arguments it receives.
+
+```js copy showLineNumbers
+function currency(price, fraction = 2) {
+  const formatCurrency = currencyJs(price).format({ precision: fraction })
+  return formatCurrency
+}
+```

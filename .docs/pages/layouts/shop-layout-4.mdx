@@ -1,0 +1,49 @@
+# Shop Layout 4
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/layouts/shop-layout-4`</Callout>
+
+<br />
+
+<img src="/layout-4.jpg" width="400" />
+
+## Examples
+
+```jsx {1,12} copy showLineNumbers
+import ShopLayout4 from 'components/layouts/shop-layout-4'
+import api from 'utils/__api__/furniture-3'
+import layoutApi from 'utils/__api__/layout'
+
+export default async function Layout({ children }) {
+  const [categories, data] = await Promise.all([
+    api.getCategories(),
+    layoutApi.getLayoutData(),
+  ])
+
+  return (
+    <ShopLayout4 navigation={categories} data={data}>
+      {children}
+    </ShopLayout4>
+  )
+}
+```
+
+## Inside Components
+
+- [Topbar](https://bazaar-doc.netlify.app/layout-components/topbar)
+- [Header](https://bazaar-doc.netlify.app/layout-components/header)
+- [MobileNavigationBar](https://bazaar-doc.netlify.app/layout-components/mobile-navigation)
+
+## Used
+
+- [Medical](https://bazar-react.vercel.app/medical)
+- [Grocery-1](https://bazar-react.vercel.app/grocery-1)
+- [Fashion-3](https://bazar-react.vercel.app/fashion-3)
+
+## Props
+
+| Name       |   Type    | Required | Default |
+| :--------- | :-------: | -------: | ------- |
+| children   | ReactNode |      Yes | -       |
+| navigation | ReactNode |      Yes | -       |

@@ -1,0 +1,60 @@
+# Topbar
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/topbar`</Callout>
+
+## Examples
+
+```jsx copy showLineNumbers
+import { Topbar, TopbarLanguageSelector, TopbarSocialLinks } from "components/topbar";
+// CUSTOM DATA MODEL
+import { Topbar } from 'models/Layout.model'
+
+// Example 1
+export default function Example1({ topbar }:{ topbar: Topbar }) {
+  return (
+    <Topbar label={topbar.label} title={topbar.title}>
+      <Topbar.Right>
+        <TopbarLanguageSelector languages={topbar.languageOptions} />
+        <TopbarSocialLinks links={topbar.socials} />
+      </Topbar.Right>
+    </Topbar>
+  )
+}
+
+// Example 2
+export default function Example2({ topbar }:{ topbar: Topbar }) {
+  return (
+    <Topbar label={topbar.label} title={topbar.title} bgColor="red">
+      <Topbar.Right>
+        <TopbarLanguageSelector languages={topbar.languageOptions} />
+        <TopbarSocialLinks links={topbar.socials} />
+      </Topbar.Right>
+    </Topbar>
+  )
+}
+```
+
+## Views
+
+<h2 className="text-xl font-medium mt-8">Example-1</h2>
+<img src="/topbar/topbar-1.png" className="mt-4 mb-8" />
+
+<h2 className="text-xl font-medium mt-4">Example-2</h2>
+<img src="/topbar/topbar-2.png" className="mt-4 mb-8" />
+
+## Used
+
+- [SaleLayout](https://bazaar-doc.netlify.app/layouts/sale-layout)
+- [ShopLayout1](https://bazaar-doc.netlify.app/layouts/shop-layout-1)
+- [ShopLayout2](https://bazaar-doc.netlify.app/layouts/shop-layout-2)
+
+## Props
+
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| title    |  string   |      Yes | -       |
+| label    |  string   |      Yes | -       |
+| children | ReactNode |      Yes | -       |
+| bgColor  |  string   | Optional | -       |

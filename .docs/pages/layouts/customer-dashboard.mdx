@@ -1,0 +1,38 @@
+# Customer Dashboard Layout
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/layouts/customer-dashboard`</Callout>
+
+<br />
+
+<img src="/user-dashboard.png" width="400" />
+
+## Examples
+
+```jsx {1,4} copy showLineNumbers
+import { CustomerDashboardLayout } from 'components/layouts/customer-dashboard'
+
+export default function Layout({ children }) {
+  return <CustomerDashboardLayout>{children}</CustomerDashboardLayout>
+}
+```
+
+## Inside Components
+
+- [Navigations](https://bazaar-doc.netlify.app/layout-components/navigations)
+
+## Used
+
+- [Wish List](https://bazar-react.vercel.app/wish-list)
+- [User Orders](https://bazar-react.vercel.app/orders)
+- [User Profile](https://bazar-react.vercel.app/profile)
+- [User Address](https://bazar-react.vercel.app/address)
+- [Support Tickets](https://bazar-react.vercel.app/support-tickets)
+- [Payment Methods](https://bazar-react.vercel.app/payment-methods)
+
+## Props
+
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| children | ReactNode |      Yes | -       |

@@ -1,0 +1,65 @@
+# Shop Layout 2
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/layouts/shop-layout-2`</Callout>
+
+<br />
+
+<img src="/ShopLayout2.jpg" width="400" />
+
+## Examples
+
+```jsx {1} copy showLineNumbers
+import ShopLayout2 from 'components/layouts/shop-layout-2'
+import { Navbar, NavigationList } from 'components/navbar'
+import { CategoryList } from 'components/categories'
+import api from 'utils/__api__/layout'
+
+export default async function Layout({ children }) {
+  const data = await api.getLayoutData()
+
+  const NAVIGATION = (
+    <Navbar
+      elevation={0}
+      navigation={<NavigationList navigation={data.header.navigation} />}
+      categories={<CategoryList categories={data.header.categoryMenus} />}
+    />
+  )
+
+  return (
+    <ShopLayout2 data={data} navbar={NAVIGATION}>
+      {children}
+    </ShopLayout2>
+  )
+}
+```
+
+```jsx {1} copy showLineNumbers
+import ShopLayout2 from 'components/layouts/shop-layout-2'
+import api from 'utils/__api__/layout'
+
+export default async function Layout({ children }) {
+  const data = await api.getLayoutData()
+  return <ShopLayout2 data={data}>{children}</ShopLayout2>
+}
+```
+
+## Inside Components
+
+- [Topbar](https://bazaar-doc.netlify.app/layout-components/topbar)
+- [Header](https://bazaar-doc.netlify.app/layout-components/header)
+- [Navbar](https://bazaar-doc.netlify.app/layout-components/navbar)
+
+## Used
+
+- [Grocery-2](https://bazar-react.vercel.app/grocery-2)
+- [Health and Beauty](https://bazar-react.vercel.app/health-beauty-shop)
+
+## Props
+
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| data     |  Object   |      Yes | -       |
+| children | ReactNode |      Yes | -       |
+| navbar   | ReactNode | Optional | -       |

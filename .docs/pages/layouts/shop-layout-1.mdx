@@ -1,0 +1,46 @@
+# Shop Layout 1
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/layouts/shop-layout-1`</Callout>
+
+<br />
+
+<img src="/ShopLayout1.jpg" width="400" />
+
+## Examples
+
+Many different `ShopLayout1` usage in this templates
+
+```jsx {1} copy showLineNumbers
+import ShopLayout1 from 'components/layouts/shop-layout-1'
+import api from 'utils/__api__/layout'
+
+export default async function Layout({ children }) {
+  const data = await api.getLayoutData()
+  return <ShopLayout1 data={data}>{children}</ShopLayout1>
+}
+```
+
+## Inside Components
+
+- [Topbar](https://bazaar-doc.netlify.app/layout-components/topbar)
+- [Header](https://bazaar-doc.netlify.app/layout-components/header)
+- [Navbar](https://bazaar-doc.netlify.app/layout-components/navbar)
+- [Footer](https://bazaar-doc.netlify.app/layout-components/footer)
+- [MobileNavigationBar](https://bazaar-doc.netlify.app/layout-components/mobile-navigation)
+
+## Used
+
+- [Market-1](https://bazar-react.vercel.app/market-1)
+- [Market-2](https://bazar-react.vercel.app/market-2)
+- [Grocery-3](https://bazar-react.vercel.app/grocery-3)
+- [Fashion-1](https://bazar-react.vercel.app/fashion-1)
+- [Fashion-2](https://bazar-react.vercel.app/fashion-2)
+
+## Props
+
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| data     |  Object   |      Yes | -       |
+| children | ReactNode |      Yes | -       |

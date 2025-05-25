@@ -1,0 +1,41 @@
+# Sale Layout
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout>Folder location: `src/components/layouts/sales-layout`</Callout>
+
+<br />
+
+<img src="/sales-layout.png" width="400" />
+
+## Examples
+
+```jsx showLineNumbers copy
+import SalesLayout from 'components/layouts/sales-layout'
+import api from 'utils/__api__/layout'
+
+export default async function Layout() {
+  const data = await api.getLayoutData()
+  return <SalesLayout data={data}>{children}</SalesLayout>
+}
+```
+
+## Inside Components
+
+- [Topbar](https://bazaar-doc.netlify.app/layout-components/topbar)
+- [Header](https://bazaar-doc.netlify.app/layout-components/header)
+- [Navbar](https://bazaar-doc.netlify.app/layout-components/navbar)
+- [Footer](https://bazaar-doc.netlify.app/layout-components/footer)
+- [MobileNavigationBar](https://bazaar-doc.netlify.app/layout-components/mobile-navigation)
+
+## Used
+
+- [Sale-1](https://bazar-react.vercel.app/sale-page-1)
+- [Sale-2](https://bazar-react.vercel.app/sale-page-2)
+
+## Props
+
+| Name     |   Type    | Required | Default |
+| :------- | :-------: | -------: | ------- |
+| data     |  Object   |      Yes | -       |
+| children | ReactNode |      Yes | -       |
